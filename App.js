@@ -69,10 +69,17 @@ class App extends React.Component {
 
     render() {
         return <div>
-          <Range id="pressure" value={this.state.pressure} min="970" max="1030" update={this.updatePressure.bind(this)} />
+          <h1>Weather Dashboard</h1>
+
+          <div className="range">
+           <h2>Pressure</h2>
+           <Range id="pressure" value={this.state.pressure} min="970" max="1030" update={this.updatePressure.bind(this)} />
+          </div>
+          <div className="range">
+           <h2>Temperature</h2>
+            <Range id="temperature" value={this.state.temperature} min="10" max="35" update={this.updateTemperature.bind(this)} />
+          </div>
           <Chart id="chanceOfRain" type="area" data={this.state.chanceOfRain} title="Chance of Rain" />
-  
-          <Range id="temperature" value={this.state.temperature} min="10" max="35" update={this.updateTemperature.bind(this)} />
           <Chart id="amountOfRainfall" type="column" data={this.state.amountOfRainfall} title="Amount of Rainfall" />
         </div>;
     }

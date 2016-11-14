@@ -1,4 +1,5 @@
 import React from 'react';
+import intent from '../utils/intent';
 
 class Range extends React.Component {
 
@@ -13,8 +14,11 @@ class Range extends React.Component {
     } 
 
     update(e) {
-       this.setState({value: e.target.value});
-       this.props.update(e.target.valuee);
+      const target = e.target.value
+       this.setState({value: target});
+       intent(() => {
+          this.props.update(target);
+       });
     }
 
     render() {

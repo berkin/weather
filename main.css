@@ -1,6 +1,17 @@
+
+body {
+  margin: 0;
+}
+
 .app {
+  background: #f3f3f3;
+  padding: 15px;
   margin: 0 auto;
   width: 420px;
+}
+
+h1 {
+  text-align: center;
 }
 
 .range {

@@ -1,8 +1,8 @@
 const intent = (function intent() {
 	let timer;
-	return function (callback, duration) {
+	return function (callback, duration, ...args) {
 		clearTimeout(timer);
-		timer = setTimeout(callback, duration || 500);
+		timer = setTimeout(callback.bind(this, args), duration || 500);
 	};
 
 }());

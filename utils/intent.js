@@ -1,10 +1,10 @@
-const intent = (function() {
-  var timer;
-  return function(callback) {
-    clearTimeout(timer);
-    timer = setTimeout(callback, 500);
-  }
-  
-})();
+const intent = (function intent() {
+	let timer;
+	return function (callback, duration) {
+		clearTimeout(timer);
+		timer = setTimeout(callback, duration || 500);
+	};
+
+}());
 
 export default intent;
